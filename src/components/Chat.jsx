@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useChat } from "../context/ChatContext"
+import { useNavigate } from "react-router-dom";
 
 export default function Chat() {
   const [msg, setMsg] = useState("")
@@ -45,6 +46,11 @@ export default function Chat() {
     setMsg("")
   }
 
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn");
+    navigate("/");
+  };
+
   return (
     <div className="chat">
       <header className="chat-header">
@@ -65,6 +71,7 @@ export default function Chat() {
           <button title="Gallery">🖼️</button>
           <button title="Settings">⚙️</button>
           <button title="Help">❓</button>
+          <button title="Help">cerrar secion</button>
         </div>
       </header>
 
