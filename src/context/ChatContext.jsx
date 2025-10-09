@@ -3,21 +3,29 @@ import { createContext, useContext, useState, useEffect } from "react"
 const ChatContext = createContext()
 
 const ChatProvider = ({ children }) => {
-  // 1. Estado de usuarios
-  // Inicializamos vacío; luego lo cargamos de localStorage o mock
+ //1. Inicializamos vacío; luego lo cargamos de localStorage
   const [users, setUsers] = useState([])
+ // 2. Estado del usuario seleccionado
+  const [selectedUser, setSelectedUserState] = useState(null)
 
-  // 2. Estado del usuario seleccionado
-  const [selectedUser, setSelectedUser] = useState(null)
-
-  // 3. Al montar el Provider, revisamos si hay usuarios guardados en localStorage
-  //    - Si existen, los usamos
-  //    - Si no existen, cargamos los mock iniciales
+  const setSelectedUser = (id) => {
+    setSelectedUserState(id)
+    if (id != null) {
+      localStorage.setItem("selectedUser", String(id))
+    } else {
+      localStorage.removeItem("selectedUser")
+    }
+ } 
+ // 3. Al montar el Provider, revisamos si hay usuarios guardados en localStorage
+ //    - Si existen, los usamos
   useEffect(() => {
     const storedUsers = localStorage.getItem("users")
-
-    if (storedUsers !== null) {
-      setUsers(JSON.parse(storedUsers))
+    const storedSelectedRaw = localStorage.getItem("selectedUser")
+    const storedSelected = storedSelectedRaw != null ? Number(storedSelectedRaw) : null
+    
+    if (storedUsers) {
+      const parsed = JSON.parse(storedUsers)
+      setUsers(parsed)
     } else {
       const initialUsers = [
         {
@@ -63,12 +71,13 @@ const ChatProvider = ({ children }) => {
       setUsers(initialUsers)
       // Actualizamos la lista de usuarios en el localstorage
       localStorage.setItem("users", JSON.stringify(initialUsers))
+      setSelectedUser(initialUsers[0].id)
     }
   }, [])
 
   // 4. Cada vez que `users` cambie, sincronizamos con localStorage
-  useEffect(() => {
-    if (users.length > 0) {
+    useEffect(() => {
+     if (users.length > 0) {
       localStorage.setItem("users", JSON.stringify(users))
     }
   }, [users])
