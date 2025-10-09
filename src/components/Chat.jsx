@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useChat } from "../context/ChatContext"
 import { useNavigate } from "react-router-dom";
+import { useSettings } from "../context/SettingsContext";
 
 export default function Chat() {
   const [msg, setMsg] = useState("")
@@ -9,7 +10,8 @@ export default function Chat() {
   const { users, selectedUser, setUsers } = useChat()
   // agregamos Hook para navegacion automativa
   const navigate = useNavigate();
-  
+  //traduccion
+  const { t } = useSettings()
   // 2. Buscamos el usuario activo
   const user = users.find(u => u.id === selectedUser)
 
@@ -71,9 +73,9 @@ export default function Chat() {
         <div className="chat-actions">
           <button title="Camera">📷</button>
           <button title="Gallery">🖼️</button>
-          <button title="Settings">⚙️</button>
+           <button title={t("settings")} onClick={() => navigate("/settings")}>⚙️</button>
           <button title="Help">❓</button>
-           <button title="Cerrar sesión" onClick={handleLogout}>Salir</button>
+          <button title="Cerrar sesión"  onClick={handleLogout} className="logout-btn"> ✖ </button>
         </div>
       </header>
 
@@ -90,7 +92,7 @@ export default function Chat() {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            placeholder="Enter text here..."
+            placeholder={t("Enter text here...")}
             onChange={handleChange}
             value={msg}
           />

@@ -1,0 +1,82 @@
+/* ——— Ahorro de energía: look "apagado" sin negro ——— */
+
+/* Suaviza todo el layout  */
+.energy .app {
+  /* baja brillo y saturación un toque */
+  filter: brightness(0.92) saturate(0.9);
+  transition: filter 180ms ease;
+}
+
+/* Fondo general apenas más oscuro (no negro) */
+.energy body {
+  background: #0f141a; 
+  color: #e6e8ea;
+}
+
+/* Sidebar con tono más apagado */
+.energy .sidebar {
+  background: #121922;               
+  border-right-color: #1f2a36;       
+}
+
+/* Input de búsqueda en modo tenue */
+.energy .search {
+  background: #141c26;
+  color: #e6e8ea;
+  border-color: #1f2a36;
+}
+
+/* Hover de usuario sin contraste fuerte */
+.energy .user:hover {
+  background: #15202b;
+}
+
+/* Header y footer del chat con bordes y base tenues */
+.energy .chat-header,
+.energy .chat-footer {
+  background: #121922;
+  border-color: #1f2a36;
+}
+
+/* Área de mensajes con un fondo un poco más oscuro */
+.energy .chat-messages {
+  background: #10161c;
+}
+
+/* Burbujas de mensajes apagadas (no negras) */
+.energy .message {
+  background: #14202a;
+  border-color: #1f2a36;
+  color: #e6e8ea;
+}
+
+/* botones en el footer en modo tenue */
+.energy .chat-footer input {
+  background: #141c26;
+  color: #e6e8ea;
+  border-color: #1f2a36;
+}
+
+.energy .chat-footer button {
+  background: #141c26;
+  color: #e6e8ea;
+  border-color: #1f2a36;
+}
+
+.logout-btn {
+  font-size: 18px;     
+  line-height: 1;
+  color: #111;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Hover en modo normal */
+.logout-btn:hover { opacity: 0.85; }
+
+/* Modo ahorro de energía: más claro para contrastar */
+.energy .logout-btn { color: #e5e7eb; }
+
+/* Hover en modo ahorro: un toque más claro */
+.energy .logout-btn:hover { color: #f1f5f9; }

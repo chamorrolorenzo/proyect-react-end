@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import logo from "../assets/images/logo.png"
+import { useSettings } from "../context/SettingsContext"
 
 const Login = () => {
   const [password, setPassword] = useState()
   const [message, setMessage] = useState()
   const [error, setError] = useState()
   const [showPassword, setShowPassword] = useState(false)
-
+  const { t }= useSettings ()
   const navigate = useNavigate()
 
   const PASS = "pepe123"
@@ -45,9 +46,9 @@ const Login = () => {
   return (
     <main className="login-main">
       <img width={100} src={logo} alt="logo de whatsapp" />
-      <h1>Clon de Whatsapp</h1>
+      <h1>{t("appTitle")}</h1>
       <form onSubmit={handleSubmit}>
-        <label>Contraseña de acceso</label>
+        <label>{t("loginAccess")}</label>
         <input
           placeholder="Ingrese la contraseña"
           type={showPassword ? "text" : "password"}
@@ -64,7 +65,7 @@ const Login = () => {
         {error && <p style={{ color: "red" }}>{error}</p>}
 
       </form>
-      <p className="text-info">Acceso restringido • Contenido privado</p>
+      <p className="text-info">{t("restricted •  private content")}</p>
     </main>
   )
 }
