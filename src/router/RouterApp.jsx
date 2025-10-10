@@ -5,6 +5,7 @@ import { NotFound } from "../views/NotFound";
 import ProtectedRoute from "../components/ProtectedRoute";
 import Settings from "../views/Settings"
 
+
 const RouterApp = () => {
   return (
     <BrowserRouter>
@@ -21,7 +22,12 @@ const RouterApp = () => {
             <ProtectedRoute>
               <Settings />
             </ProtectedRoute>
-          }/>
+          } />
+        <Route path="/help" element={
+            <ProtectedRoute>
+              <Help />
+            </ProtectedRoute>
+        }/>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

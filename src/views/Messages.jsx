@@ -4,12 +4,11 @@ import { ChatProvider } from "../context/ChatContext"
 
 const Messages = () => {
   return (
-    <ChatProvider>
-      <div className="app">
+       <div className="app">
         <Sidebar />
         <Chat />
       </div>
-    </ChatProvider>
+    
   )
 }
 

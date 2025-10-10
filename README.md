@@ -1,4 +1,4 @@
-# React + Vite
+# Reacerlo
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -13,3 +13,4 @@ If you are developing a production application, we recommend using TypeScript wi
 
 [text](d:/ChatContext_explicado.md)
 [text](d:/Checklist_chat_persistencia.md)
+[text](d:/Explicacion_app_para_niña_8.md)

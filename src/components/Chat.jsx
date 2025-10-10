@@ -73,8 +73,8 @@ export default function Chat() {
         <div className="chat-actions">
           <button title="Camera">📷</button>
           <button title="Gallery">🖼️</button>
-           <button title={t("settings")} onClick={() => navigate("/settings")}>⚙️</button>
-          <button title="Help">❓</button>
+        <button title={t("settings")} onClick={openSettings}>⚙️</button>
+          + <button title={t("help")}>❓</button>
           <button title="Cerrar sesión"  onClick={handleLogout} className="logout-btn"> ✖ </button>
         </div>
       </header>
