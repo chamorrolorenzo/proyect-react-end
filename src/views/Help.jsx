@@ -1,12 +1,15 @@
 import { useNavigate } from "react-router-dom"
 import { useSettings } from "../context/SettingsContext"
+import "../views/help.css"
+
+
 export default function Help() {
   const navigate = useNavigate()
   const { t } = useSettings()
 
   return (
     <main>
-      <h1>Help / Ayuda</h1>
+      <h1>Ayuda</h1>
 
       <section>
         <h2>¿Qué es esta app?</h2>

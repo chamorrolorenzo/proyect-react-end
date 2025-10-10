@@ -11,7 +11,7 @@ export default function Chat() {
   // agregamos Hook para navegacion automativa
   const navigate = useNavigate();
   //traduccion
-  const { t } = useSettings()
+  const { t, openSettings } = useSettings()
   // 2. Buscamos el usuario activo
   const user = users.find(u => u.id === selectedUser)
 
@@ -73,9 +73,10 @@ export default function Chat() {
         <div className="chat-actions">
           <button title="Camera">📷</button>
           <button title="Gallery">🖼️</button>
-        <button title={t("settings")} onClick={openSettings}>⚙️</button>
-          + <button title={t("help")}>❓</button>
-          <button title="Cerrar sesión"  onClick={handleLogout} className="logout-btn"> ✖ </button>
+                <button title={t("settings")} onClick={openSettings}>⚙️</button>
+
+           <button title={t("help")} onClick={() => navigate("/help")}>❓</button>
+          <button title={t("logout")}  onClick={handleLogout} className="logout-btn"> ✖ </button>
         </div>
       </header>
 

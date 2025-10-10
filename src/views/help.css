@@ -1,0 +1,75 @@
+/* ========== Estilos genéricos (sin clases) ========== */
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  box-sizing: border-box;
+}
+
+main > h1 {
+  margin: 0 0 12px;
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+main > section {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 12px 0;
+}
+
+main > section > h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+main > section p,
+main > section ul {
+  margin: 8px 0 0;
+}
+
+main > section ul {
+  padding-left: 18px;
+}
+
+main > button {
+  margin-top: 16px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+main > button:hover {
+  background: #f3f4f6;
+}
+
+/* Modo ahorro (energy) */
+.energy main > section {
+  background: #111827;
+  border-color: #1f2937;
+}
+
+.energy main,
+.energy main > h1,
+.energy main > section h2,
+.energy main > section,
+.energy main > section li,
+.energy main > section p {
+  color: #e6e8ea;
+}
+
+.energy main > button {
+  background: #111827;
+  color: #e6e8ea;
+  border-color: #374151;
+}
+
+.energy main > button:hover {
+  background: #0f172a;
+}

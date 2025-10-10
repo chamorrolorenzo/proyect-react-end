@@ -4,7 +4,7 @@ import { Messages } from "../views/Messages";
 import { NotFound } from "../views/NotFound";
 import ProtectedRoute from "../components/ProtectedRoute";
 import Settings from "../views/Settings"
-
+import Help from "../views/Help";
 
 const RouterApp = () => {
   return (

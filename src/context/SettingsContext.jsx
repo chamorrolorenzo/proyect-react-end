@@ -11,7 +11,7 @@ const TRANSLATIONS = {
     restricted: "Acceso restringido • Contenido privado",
     search: "buscador...",
     noSearch: "No search found...",
-    lastSeen: "Last seen",
+    lastSeen: "ultima vez",
     enterText: "Escribe un mensaje...",
     logout: "Cerrar sesión",
     settings: "Configuración",
@@ -23,7 +23,9 @@ const TRANSLATIONS = {
     help: "Ayuda",
     switchOn: "Encendido",
     switchOff: "Apagado",
-    
+    lastSeen: "Últ. vez",
+    online: "en línea",
+    offline: "desconectado",
   },
   en: {
     appTitle: "WhatsApp Clone",
@@ -31,9 +33,9 @@ const TRANSLATIONS = {
     loginPlaceholder: "Enter password",
     loginButton: "Sign in",
     restricted: "Restricted access • Private content",
-    search: "Search...",
+    search: "search...",
     noSearch: "No results...",
-    lastSeen: "Last seen",
+    lastSeen: "Last see",
     enterText: "Type a message...",
     logout: "Log out",
     settings: "Settings",
@@ -44,7 +46,9 @@ const TRANSLATIONS = {
     back: "Back",
     help: "Help",
     switchOn: "On",
-    switchOff: "Off"
+    switchOff: "Off",
+    online: "online",
+    offline: "offline"
   }
 }
 
@@ -95,7 +99,7 @@ export function SettingsProvider({ children }) {
   }
    const onBackdrop = (e) => { if (e.target === e.currentTarget) closeSettings() }
 
-  return <SettingsContext.Provider value={value}>
+  return  <SettingsContext.Provider value={value}>
     {children}
     
     {isSettingsOpen && (

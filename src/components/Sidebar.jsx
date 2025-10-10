@@ -4,7 +4,8 @@ import { useSettings } from "../context/SettingsContext"
 
 
 export default function Sidebar() {
-  const { t } = useSettings()
+   const { t, language } = useSettings()
+
   const { users, setSelectedUser } = useChat()
   const [usersToRender, setUsersToRender] = useState(users)
   
@@ -26,19 +27,19 @@ export default function Sidebar() {
     <div className="sidebar">
       <input
         type="text"
-        placeholder={t("Search")} 
+        placeholder={t("search")} 
         className="search"
         onChange={handleChange}/>
 
       {usersToRender.length === 0 &&
-        (<p className="search-result">No search found...</p>
+        ( (<p className="search-result">{t("noSearch")}</p>)
       )}
 
       <ul className="user-list">
         {usersToRender.map((user) => (
           <li
             key={user.id}
-            onClick={() => setSelectedUser(user.id)}
+            onClick={() => setSelectedUser(Number(user.id))}
             className="user"
           >
             <img
@@ -59,7 +60,7 @@ export default function Sidebar() {
                 {user.name}
               </strong>
               <small>
-                {user.status === "offline" ? user.lastSeen : "online"}
+                {user.status === "offline" ?  user.lastSeen : "online"}
               </small>
             </div>
           </li>
