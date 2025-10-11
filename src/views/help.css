@@ -73,3 +73,22 @@ main > button:hover {
 .energy main > button:hover {
   background: #0f172a;
 }
+.help-clip-inline { margin-left: 8px; display: inline-block; vertical-align: middle; }
+
+/*clip*/
+.help-clip-inline {
+  margin-left: 8px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.help-clip-icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: -2px; /* alinea con el texto */
+}
+
+/* Dark mode: que el icono se vea blanco */
+.energy .help-clip-icon {
+  filter: brightness(0) invert(1);
+}

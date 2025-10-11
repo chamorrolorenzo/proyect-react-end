@@ -1,56 +1,38 @@
 import { useSettings } from "../context/SettingsContext"
 import { useNavigate } from "react-router-dom"
+import "../context/settings.css"
 
 export default function Settings() {
   const { language, setLanguage, energySaving, toggleEnergySaving, t } = useSettings()
   const navigate = useNavigate()
 
   return (
-    <main style={{ maxWidth: 560, margin: "0 auto", padding: 16 }}>
-      <h1 style={{ marginBottom: 16 }}>{t("settings")}</h1>
-
-      <section style={{ border: "1px solid #e5e7eb", borderRadius: 12, padding: 16, marginBottom: 16 }}>
-        <h2 style={{ marginTop: 0, fontSize: 16 }}>{t("language")}</h2>
-        <div style={{ display: "flex", gap: 12 }}>
+    <main className="settings">
+      <h1>{t("settings")}</h1>
+      <section className="settings-car">
+        <h2>{t("language")}</h2>
+        <div >
           <button
-            onClick={() => setLanguage("es")}
-            style={{
-              padding: "8px 12px",
-              borderRadius: 8,
-              border: language === "es" ? "2px solid black" : "1px solid #d1d5db",
-              background: "white",
-              cursor: "pointer"
-            }}
-          >
+            onClick={() => setLanguage("es")}>
             {t("spanish")}
           </button>
           <button
-            onClick={() => setLanguage("en")}
-            style={{
-              padding: "8px 12px",
-              borderRadius: 8,
-              border: language === "en" ? "2px solid black" : "1px solid #d1d5db",
-              background: "white",
-              cursor: "pointer"
-            }}
-          >
+            onClick={() => setLanguage("en")}>
             {t("english")}
           </button>
         </div>
       </section>
 
-      <section style={{ border: "1px solid #e5e7eb", borderRadius: 12, padding: 16 }}>
-        <label style={{ display: "flex", alignItems: "center", gap: 10, cursor: "pointer" }}>
+      <section>
+       <label className="settings-toggle">
           <input type="checkbox" checked={energySaving} onChange={toggleEnergySaving} />
           {t("energySaving")}
         </label>
       </section>
 
-      <div style={{ marginTop: 20 }}>
+      <div className="settings-actions">
         <button
-          onClick={() => navigate(-1)}
-          style={{ padding: "8px 12px", borderRadius: 8, border: "1px solid #d1d5db", background: "white", cursor: "pointer" }}
-        >
+          onClick={() => navigate(-1)}>
           ← {t("back")}
         </button>
       </div>

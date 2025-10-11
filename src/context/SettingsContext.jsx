@@ -18,14 +18,20 @@ const TRANSLATIONS = {
     language: "Idioma",
     spanish: "Español",
     english: "Inglés",
-    energySaving: "Ahorro de energía (oscuro)",
+    energySaving: "Ahorro de energía ",
     back: "Volver",
     help: "Ayuda",
-    switchOn: "Encendido",
-    switchOff: "Apagado",
+    on: "Encendido",
+    off: "Apagado",
     lastSeen: "Últ. vez",
     online: "en línea",
     offline: "desconectado",
+    attach: "Adjuntar",
+    gallery: "Galería",
+    contact: "Contactos",
+    document: "Documento",
+    audio: "Audio",
+    location: "Ubicación",
   },
   en: {
     appTitle: "WhatsApp Clone",
@@ -42,13 +48,19 @@ const TRANSLATIONS = {
     language: "Language",
     spanish: "Spanish",
     english: "English",
-    energySaving: "Energy saving (dark)",
+    energySaving: "Energy saving ",
     back: "Back",
     help: "Help",
-    switchOn: "On",
-    switchOff: "Off",
+    on: "On",
+    off: "Off",
     online: "online",
-    offline: "offline"
+    offline: "offline",
+    attach: "Attach",
+    gallery: "Gallery",
+    contact: "Contacts",
+    document: "Document",
+    audio: "Audio",
+    locatio: "Location"
   }
 }
 
@@ -126,8 +138,7 @@ export function SettingsProvider({ children }) {
                   type="button"
                   className={`button ${energySaving ? "primary" : ""}`}
                   onClick={() => setEnergySaving(!energySaving)}
-                  aria-pressed={energySaving}
-                >
+                  aria-pressed={energySaving}>
                   {energySaving ? t("on") : t("off")}
                 </button>
               </div>

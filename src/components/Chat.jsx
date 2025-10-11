@@ -2,13 +2,14 @@ import { useState } from "react"
 import { useChat } from "../context/ChatContext"
 import { useNavigate } from "react-router-dom";
 import { useSettings } from "../context/SettingsContext";
+import Clip from "../views/Clip";
 
 export default function Chat() {
   const [msg, setMsg] = useState("")
 
   // 1. Obtenemos del contexto todo lo necesario
   const { users, selectedUser, setUsers } = useChat()
-  // agregamos Hook para navegacion automativa
+  // agregamos Hook para navegacion automatica
   const navigate = useNavigate();
   //traduccion
   const { t, openSettings } = useSettings()
@@ -45,7 +46,7 @@ export default function Chat() {
         : u
     )
 
-    setUsers(updatedUsers) // esto dispara el useEffect del contexto que guarda en localStorage
+    setUsers(updatedUsers) //dispara el useEffect del contexto que guarda en localStorage
 
     setMsg("")
   }
@@ -71,12 +72,16 @@ export default function Chat() {
         </div>
 
         <div className="chat-actions">
-          <button title="Camera">📷</button>
+
+           <Clip />
+          
           <button title="Gallery">🖼️</button>
                 <button title={t("settings")} onClick={openSettings}>⚙️</button>
 
-           <button title={t("help")} onClick={() => navigate("/help")}>❓</button>
-          <button title={t("logout")}  onClick={handleLogout} className="logout-btn"> ✖ </button>
+          <button title={t("help")} onClick={() => navigate("/help")}>❓</button>
+          
+          <button title={t("logout")} onClick={handleLogout} className="logout-btn"> ✖ 
+          </button>
         </div>
       </header>
 

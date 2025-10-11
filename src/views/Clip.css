@@ -1,0 +1,50 @@
+/* ===== Clip (estilos base del componente) ===== */
+.clip { position: relative; }
+.clip-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 8px; border: 1px solid #d1d5db; background: #fff;
+  border-radius: 8px; cursor: pointer;
+}
+.clip-icon { width: 20px; height: 20px; display: block; }
+
+.clip-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  padding: 8px; list-style: none; margin: 0; min-width: 180px; z-index: 1000;
+  opacity: 0; pointer-events: none; transform: translateY(-4px);
+  transition: opacity .15s ease, transform .15s ease;
+}
+.clip:focus-within .clip-menu { opacity: 1; pointer-events: auto; transform: translateY(0); }
+
+.clip-item {
+  width: 100%;
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 12px; background: transparent; border: 0; border-radius: 8px;
+  cursor: pointer; text-align: left;
+}
+.clip-item:hover { background: #f3f4f6; }
+
+/* ===== Modo oscuro (usando tu clase .energy) ===== */
+.energy .clip-btn {
+  background: #141c26;
+  border-color: #1f2a36;
+  color: #e6e8ea;
+}
+
+/* el ícono es <img>, lo “blanqueamos” */
+.energy .clip-icon { filter: invert(1) brightness(1.2); }
+
+.energy .clip-menu {
+  background: #121922;
+  border-color: #1f2a36;
+  color: #e6e8ea;
+  box-shadow: 0 10px 30px rgba(0,0,0,.5);
+}
+
+.energy .clip-item { color: #e6e8ea; }
+.energy .clip-item:hover { background: #15202b; }

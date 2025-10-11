@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import { useSettings } from "../context/SettingsContext"
 import "../views/help.css"
-
+import clipIconUrl from "../assets/images/vertical-paperclip-outline-tall.svg?url"
 
 export default function Help() {
   const navigate = useNavigate()
@@ -19,6 +19,13 @@ export default function Help() {
       <section>
         <h2>Controles rápidos</h2>
         <ul>
+            <li>
+            <strong>
+              <img src={clipIconUrl} alt="" aria-hidden="true" className="help-clip-icon" />
+              {" "}{t("attach")}:
+            </strong>{" "}
+            abre el menú de adjuntos <span className="help-clip-inline"></span>
+          </li>
           <li><strong>Seleccionar contacto:</strong> clic en la lista izquierda.</li>
           <li><strong>Enviar mensaje:</strong> escribí abajo y Enter o botón ➤.</li>
           <li><strong>⚙️ {t("settings")}:</strong> abre el popup para idioma y ahorro de energía.</li>
