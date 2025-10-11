@@ -10,14 +10,12 @@ export default function Help() {
   return (
     <main>
       <h1>{t("help")}</h1>
-
       <section>
        <h2>{t("whatIsThisApp") ?? "¿Qué es esta app?"}</h2>
         <p>{t("helpIntro") ??
             "Clon simple de WhatsApp para practicar: contactos, mensajes y ajustes (idioma y modo energía)."}
         </p>
       </section>
-      
       <section>
         <h2>{t("quickControls") ?? "Controles rápidos"}</h2>
         <ul>
@@ -42,7 +40,6 @@ export default function Help() {
 
         </ul>
       </section>
-
       <section>
         <h2>{t("keyboardShortcuts") ?? "Atajos de teclado"}</h2>
         <ul>
@@ -51,7 +48,6 @@ export default function Help() {
           <li><strong>Tab:</strong> {t("kbTab") ?? "navegar por los controles"}</li>
         </ul>
       </section>
-
       <button type="button" onClick={() => navigate(-1)}>
         ← {t("back")}
       </button>
