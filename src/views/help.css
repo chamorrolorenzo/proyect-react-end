@@ -1,4 +1,4 @@
-/* ========== Estilos genéricos (sin clases) ========== */
+/* Estilos genéricos */
 
 main {
   max-width: 760px;
@@ -9,10 +9,8 @@ main {
 
 main > h1 {
   margin: 0 0 12px;
-  font-size: 28px;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-}
+  font-size: 30px;
+ }
 
 main > section {
   background: #ffffff;
@@ -24,11 +22,12 @@ main > section {
 
 main > section > h2 {
   margin: 0 0 8px;
-  font-size: 18px;
+  font-size: 22px;
 }
 
 main > section p,
 main > section ul {
+  font-size: 18px;
   margin: 8px 0 0;
 }
 
@@ -73,22 +72,13 @@ main > button:hover {
 .energy main > button:hover {
   background: #0f172a;
 }
-.help-clip-inline { margin-left: 8px; display: inline-block; vertical-align: middle; }
-
-/*clip*/
-.help-clip-inline {
-  margin-left: 8px;
-  display: inline-block;
-  vertical-align: middle;
-}
 
 .help-clip-icon {
-  width: 16px;
-  height: 16px;
-  vertical-align: -2px; /* alinea con el texto */
+  width: 18px;
+  height: 18px;
 }
 
-/* Dark mode: que el icono se vea blanco */
+/*icono clip blanco(vrg) */
 .energy .help-clip-icon {
   filter: brightness(0) invert(1);
 }

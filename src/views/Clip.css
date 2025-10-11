@@ -29,7 +29,7 @@
 }
 .clip-item:hover { background: #f3f4f6; }
 
-/* ===== Modo oscuro (usando tu clase .energy) ===== */
+/* Modo oscuro */
 .energy .clip-btn {
   background: #141c26;
   border-color: #1f2a36;

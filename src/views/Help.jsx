@@ -9,39 +9,52 @@ export default function Help() {
 
   return (
     <main>
-      <h1>Ayuda</h1>
+      <h1>{t("help")}</h1>
 
       <section>
-        <h2>¿Qué es esta app?</h2>
-        <p>Clon simple de WhatsApp para practicar: contactos, mensajes y ajustes (idioma y modo energía).</p>
+       <h2>{t("whatIsThisApp") ?? "¿Qué es esta app?"}</h2>
+        <p>{t("helpIntro") ??
+            "Clon simple de WhatsApp para practicar: contactos, mensajes y ajustes (idioma y modo energía)."}
+        </p>
       </section>
-
+      
       <section>
-        <h2>Controles rápidos</h2>
+        <h2>{t("quickControls") ?? "Controles rápidos"}</h2>
         <ul>
-            <li>
-            <strong>
-              <img src={clipIconUrl} alt="" aria-hidden="true" className="help-clip-icon" />
-              {" "}{t("attach")}:
-            </strong>{" "}
-            abre el menú de adjuntos <span className="help-clip-inline"></span>
+          <li><strong><img src={clipIconUrl} alt="" aria-hidden="true" className="help-clip-icon"/>
+              {" "}{t("attach")}:</strong>{" "}
+           {t("attachHint") ?? "abre el menú de adjuntos (Galería, Contacto, Documento, Audio, Ubicación)."}{" "}
           </li>
-          <li><strong>Seleccionar contacto:</strong> clic en la lista izquierda.</li>
-          <li><strong>Enviar mensaje:</strong> escribí abajo y Enter o botón ➤.</li>
-          <li><strong>⚙️ {t("settings")}:</strong> abre el popup para idioma y ahorro de energía.</li>
-          <li><strong>Cerrar sesión:</strong> botón ✖ en la barra superior.</li>
+
+           <li><strong>{t("selectContact")}:</strong> {t("selectContactHint")}
+          </li>
+
+          <li><strong>{t("sendMessage")}:</strong> {t("sendMessageHint")}</li>
+          
+          <li><strong>⚙️ {t("settings")}:</strong>{" "}
+            {t("settingsHint") ?? "abre el popup para idioma y ahorro de energía"}
+          </li>
+          
+          <li>
+            <strong>{t("logout")}:</strong>{" "}
+            {t("logoutHint") ?? "botón ✖ en la barra superior"}
+          </li>
+
         </ul>
       </section>
 
       <section>
-        <h2>Problemas comunes</h2>
+        <h2>{t("keyboardShortcuts") ?? "Atajos de teclado"}</h2>
         <ul>
-          <li>Si algo se ve en blanco, recargá la página.</li>
-          <li>Para reiniciar datos: borra <code>localStorage.users</code> y <code>localStorage.selectedUser</code>.</li>
+          <li><strong>Enter:</strong> {t("kbEnter") ?? "enviar mensaje"}</li>
+          <li><strong>Esc:</strong> {t("kbEsc") ?? "cerrar popups/menús abiertos"}</li>
+          <li><strong>Tab:</strong> {t("kbTab") ?? "navegar por los controles"}</li>
         </ul>
       </section>
 
-      <button onClick={() => navigate(-1)}>← Volver</button>
+      <button type="button" onClick={() => navigate(-1)}>
+        ← {t("back")}
+      </button>
     </main>
   )
 }
