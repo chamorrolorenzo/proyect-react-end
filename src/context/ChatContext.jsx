@@ -26,6 +26,10 @@ const ChatProvider = ({ children }) => {
     if (storedUsers) {
       const parsed = JSON.parse(storedUsers)
       setUsers(parsed)
+          if (storedSelected != null && parsed.some(u => Number(u.id) === Number(storedSelected))) {
+        setSelectedUser(storedSelected) // NEW
+      }
+ 
     } else {
       const initialUsers = [
         {

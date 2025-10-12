@@ -250,7 +250,7 @@ form .text-info {
 /* movil, alterna entre lista y chat*/
 
 @media (max-width: 480px) {
-  .app:not(.has-selection) 
+    .app:not(.has-selection) 
     .chat { display: none;  }
   
   .app:not(.has-selection) 
@@ -282,5 +282,7 @@ form .text-info {
     margin-right: 6px;
     cursor: pointer;
   }
-
+  .energy .back-btn {
+    color: #e6e8ea;              
+ }
 }

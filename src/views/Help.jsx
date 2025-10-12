@@ -40,6 +40,17 @@ export default function Help() {
 
         </ul>
       </section>
+
+      <section>
+        <h3>{t("mobileTitle")}</h3>
+          <ul>
+            <li>{t("mobileContactsOnly")}</li>
+            <li>{t("mobileOpenChat")}</li>
+            <li>{t("mobileBack")}</li>
+          </ul>
+
+      </section>
+      
       <section>
         <h2>{t("keyboardShortcuts") ?? "Atajos de teclado"}</h2>
         <ul>

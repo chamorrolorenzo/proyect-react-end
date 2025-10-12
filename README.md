@@ -70,7 +70,7 @@ src/
 
 - `/` → Chat
 - `/help` → Ayuda
-- `/settings` → (si se usa como vista) — En este proyecto, se usa un **popup** controlado por `SettingsContext`.
+- `/settings` → En este proyecto, se usa un **popup** controlado por `SettingsContext`.
 
 ---
 
@@ -100,14 +100,11 @@ const { t } = useSettings();
 
 **Clip en blanco**
 ```css
-.energy .clip__icon {
+.energy .clip-icon {
   filter: brightness(0) invert(1);  /* <img> → blanco */
 }
 
 ```
-
----
-
 ## 📎 Botón Clip (adjuntos)
 
 - **Componente**: `views/Clip.jsx`
@@ -156,7 +153,7 @@ import Clip from "./Clip";
 - **Clip funcional**:
   - Abrir **selector de archivos** (Galería/Documento).
   - **Compartir contacto**: seleccionar contacto y enviar tarjeta.
-  - **Audio**: grabar/adjuntar mensajes de voz (MediaRecorder).
+  - **Audio**: grabar/adjuntar mensajes de voz/audio.
   - **Ubicación**: leer geolocalización (con permiso) y enviarla como mensaje.
 
 - **Contactos**:
@@ -176,15 +173,6 @@ import Clip from "./Clip";
   - Separar datos mock de UI.
   - Sincronizar con una API/DB (p. ej. Supabase/Firebase) para persistencia real.
 
-## ✅ Checklist rápido
-
-- [ ] `npm run dev` levanta sin errores
-- [ ] Clip visible, menú abre/cierra (con `:focus-within`)
-- [ ] Modal de **Settings** cambia idioma/tema y persiste
-- [ ] Modo **Ahorro de energía** activa clase `.energy` y recolorea clip/menú
-- [ ] Traducciones `t("…")` presentes en ES/EN
-
----
 ## 📄 Licencia
 
 Uso educativo. Podés adaptarlo y modificarlo libremente.

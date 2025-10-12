@@ -62,7 +62,7 @@ export default function Chat() {
 
             {/* flecha de volver a contactos para movile */}
             <button type="button" className="back-btn" onClick={() => setSelectedUser(null)}
-              title={t("back")} ata-label={t("back")}> ←
+              title={t("back")} aria-label={t("back")}> ←
             </button>
                        
             <img
@@ -98,7 +98,7 @@ export default function Chat() {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            placeholder={t("Enter text here...")}
+            placeholder={t("Entertext")}
             onChange={handleChange}
             value={msg}
           />

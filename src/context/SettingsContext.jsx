@@ -9,9 +9,11 @@ const TRANSLATIONS = {
     loginPlaceholder: "Ingrese la contraseña",
     loginButton: "Acceder",
     restricted: "Acceso restringido • Contenido privado",
+
     search: "buscador...",
-    noSearch: "No search found...",
-    lastSeen: "ultima vez",
+    noSearch: "No se encontraron resultados...",  // ← estaba en inglés
+
+    lastSeen: "Últ. vez", // ← unificamos (estaba duplicado)
     enterText: "Escribe un mensaje...",
     logout: "Cerrar sesión",
     settings: "Configuración",
@@ -21,44 +23,50 @@ const TRANSLATIONS = {
     energySaving: "Ahorro de energía ",
     back: "Volver",
     help: "Ayuda",
+
     on: "Encendido",
     off: "Apagado",
-    lastSeen: "Últ. vez",
     online: "en línea",
     offline: "desconectado",
+
     attach: "Adjuntar",
     gallery: "Galería",
     contact: "Contactos",
     document: "Documento",
     audio: "Audio",
     location: "Ubicación",
-    help: "Ayuda",
+
     selectContact: "Seleccionar contacto",
     selectContactHint: "clic en la lista izquierda",
     sendMessage: "Enviar mensaje",
     sendMessageHint: "escribí abajo y Enter o botón ➤",
+
     whatIsThisApp: "¿Qué es esta app?",
-    helpIntro: "Clon simple de WhatsApp para practicar: contactos, mensajes y ajustes (idioma y modo energía).",
+    helpIntro:
+      "Clon simple de WhatsApp para practicar: contactos, mensajes y ajustes (idioma y modo energía).",
     quickControls: "Controles rápidos",
-    attach: "Adjuntar",
-    attachHint: "abre el menú de adjuntos (Galería, Contacto, Documento, Audio, Ubicación).",
-    selectContact: "Seleccionar contacto",
-    selectContactHint: "clic en la lista izquierda",
-    sendMessage: "Enviar mensaje",
-    sendMessageHint: "escribí abajo y Enter o botón ➤",
+    attachHint:
+      "abre el menú de adjuntos (Galería, Contacto, Documento, Audio, Ubicación).",
     settingsHint: "abre el popup para idioma y ahorro de energía",
     logoutHint: "botón ✖ en la barra superior",
+
     keyboardShortcuts: "Atajos de teclado",
     kbEnter: "enviar mensaje",
     kbEsc: "cerrar popups/menús abiertos",
     kbTab: "navegar por los controles",
     darkMode: "Modo oscuro / Ahorro de energía",
-    darkModeHint: "Activá Ahorro de energía en Configuración: ajusta colores, hace el clip blanco y oscurece el menú de adjuntos.",
+    darkModeHint:
+      "Activá Ahorro de energía en Configuración: ajusta colores, hace el clip blanco y oscurece el menú de adjuntos.",
     commonIssues: "Problemas comunes",
     reloadIfBlank: "Si algo se ve en blanco, recargá la página.",
     resetData: "Para reiniciar datos:",
     and: "y",
+    mobileTitle: "Uso en móviles (≤480 px)",
+    mobileContactsOnly: "Se muestran solo los contactos a pantalla completa.",
+    mobileOpenChat: "Al seleccionar un contacto, se abre el chat.",
+    mobileBack: "Para volver a contactos, usá la flecha “Volver”.",
   },
+
   en: {
     appTitle: "WhatsApp Clone",
     loginAccess: "Access password",
@@ -67,7 +75,7 @@ const TRANSLATIONS = {
     restricted: "Restricted access • Private content",
     search: "search...",
     noSearch: "No results...",
-    lastSeen: "Last see",
+    lastSeen: "Last seen", 
     enterText: "Type a message...",
     logout: "Log out",
     settings: "Settings",
@@ -86,34 +94,37 @@ const TRANSLATIONS = {
     contact: "Contacts",
     document: "Document",
     audio: "Audio",
-    help: "Help",
-    locatio: "Location",
+    location: "Location",
     selectContact: "Select contact",
     selectContactHint: "click on the left list",
     sendMessage: "Send message",
     sendMessageHint: "type below and press Enter or ➤ button",
     whatIsThisApp: "What is this app?",
-    helpIntro: "Simple WhatsApp clone to practice: contacts, messages, and settings (language and energy mode).",
+    helpIntro:
+      "Simple WhatsApp clone to practice: contacts, messages, and settings (language and energy mode).",
     quickControls: "Quick controls",
-    attach: "Attach",
-    attachHint: "opens the attachments menu (Gallery, Contact, Document, Audio, Location).",
-    selectContact: "Select contact",
-    selectContactHint: "click on the left list",
-    sendMessage: "Send message",
-    sendMessageHint: "type below and press Enter or ➤ button",
-    settingsHint: "opens the popup for language and energy saving",
+    attachHint:
+      "opens the attachments menu (Gallery, Contact, Document, Audio, Location).",
+    settingsHint:
+      "opens the popup for language and energy saving",
     logoutHint: "✖ button on the top bar",
+
     keyboardShortcuts: "Keyboard shortcuts",
     kbEnter: "send message",
     kbEsc: "close open popups/menus",
     kbTab: "navigate through controls",
     darkMode: "Dark mode / Energy saving",
-    darkModeHint: "Enable Energy saving in Settings: adjusts colors, makes the clip white and darkens the attachments menu.",
+    darkModeHint:
+      "Enable Energy saving in Settings: adjusts colors, makes the clip white and darkens the attachments menu.",
     commonIssues: "Common issues",
     reloadIfBlank: "If the page is blank, reload it.",
     resetData: "To reset data:",
     and: "and",
-  }
+    mobileTitle: "Mobile usage (≤480 px)",
+   mobileContactsOnly: "Only contacts are shown full screen.",
+   mobileOpenChat: "Selecting a contact opens the chat.",
+ mobileBack: "Use the “Back” arrow to return to contacts.",
+  },
 }
 
 export function SettingsProvider({ children }) {

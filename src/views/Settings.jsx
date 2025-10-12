@@ -9,7 +9,7 @@ export default function Settings() {
   return (
     <main className="settings">
       <h1>{t("settings")}</h1>
-      <section className="settings-car">
+      <section className="settings-card">
         <h2>{t("language")}</h2>
         <div >
           <button onClick={() => setLanguage("es")}>

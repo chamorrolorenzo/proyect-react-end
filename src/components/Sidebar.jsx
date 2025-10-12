@@ -48,18 +48,24 @@ export default function Sidebar() {
           <li
             key={user.id}
             onClick={() => handleSelect(user)}  
-            className="user">
+            className="user"
+          >
             <img
               className="avatar"
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4YreOWfDX3kK-QLAbAL4ufCPc84ol2MA8Xg&s"
-              alt={user.name}/>
+              alt={user.name}
+            />
             <div className="user-info">
               <strong>
-                <span style={{
-                  color: user.status === "online" ?
-                  "green" : "red", marginRight: "3px"
-                  }}> •
-                </span>{user.name}
+                <span
+                  style={{
+                    color: user.status === "online" ? "green" : "red",
+                    marginRight: "3px",
+                  }}
+                >
+                  •
+                </span>
+                {user.name}
               </strong>
               <small>
                 {user.status === "offline" ?  user.lastSeen : "online"}

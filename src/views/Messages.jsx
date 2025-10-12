@@ -4,10 +4,9 @@ import Sidebar from "../components/Sidebar";
 
 const Messages = () => {
   const { selectedUser } = useChat();
-  const hasSelection = selectedUser !== null && selectedUser !==undefined;
-
-  return (
-    <div className={`app ${selectedUser ? "has-selection" : ""}`}>
+  
+ return (
+    <div className={`app ${selectedUser != null ? "has-selection" : ""}`}>
       <Sidebar />
       <Chat />
     </div>
