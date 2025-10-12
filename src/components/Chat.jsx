@@ -7,14 +7,13 @@ import Clip from "../views/Clip";
 export default function Chat() {
   const [msg, setMsg] = useState("")
 
-  // 1. Obtenemos del contexto todo lo necesario
-  const { users, selectedUser, setUsers } = useChat()
+  const { users, selectedUser, setUsers, setSelectedUser} = useChat()
   // agregamos Hook para navegacion automatica
   const navigate = useNavigate();
   //traduccion
   const { t, openSettings } = useSettings()
   // 2. Buscamos el usuario activo
-  const user = users.find(u => u.id === selectedUser)
+ const user = users.find(u => Number(u.id) === Number(selectedUser))
 
   if (!user) {
     return (
@@ -47,7 +46,6 @@ export default function Chat() {
     )
 
     setUsers(updatedUsers) //dispara el useEffect del contexto que guarda en localStorage
-
     setMsg("")
   }
 
@@ -61,20 +59,22 @@ export default function Chat() {
       <header className="chat-header">
         <div>
           <div className="chat-user">
+
+            {/* flecha de volver a contactos para movile */}
+            <button type="button" className="back-btn" onClick={() => setSelectedUser(null)}
+              title={t("back")} ata-label={t("back")}> ←
+            </button>
+                       
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4YreOWfDX3kK-QLAbAL4ufCPc84ol2MA8Xg&s"
-              alt={user.name}
-              className="chat-avatar"
-            />
+              alt={user.name} className="chat-avatar"/>
             <strong>{user.name}</strong>
             {user.lastSeen !== "" && <span className="last-seen">Last seen: {user.lastSeen}</span>}
           </div>
         </div>
 
         <div className="chat-actions">
-
            <Clip />
-          
           <button title="Gallery">🖼️</button>
                 <button title={t("settings")} onClick={openSettings}>⚙️</button>
 

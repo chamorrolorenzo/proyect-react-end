@@ -52,10 +52,8 @@ const Login = () => {
         <input
           placeholder="Ingrese la contraseña"
           type={showPassword ? "text" : "password"}
-          onChange={(event) => setPassword(event.target.value)}
-        />
-        <button
-          onClick={handleShowPassword}
+          onChange={(event) => setPassword(event.target.value)}/>
+        <button onClick={handleShowPassword}
           type="button"><i className="fa fa-eye" aria-hidden="true"></i>
         </button>
         <button>Acceder</button>

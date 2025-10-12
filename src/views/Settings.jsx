@@ -12,12 +12,10 @@ export default function Settings() {
       <section className="settings-car">
         <h2>{t("language")}</h2>
         <div >
-          <button
-            onClick={() => setLanguage("es")}>
+          <button onClick={() => setLanguage("es")}>
             {t("spanish")}
           </button>
-          <button
-            onClick={() => setLanguage("en")}>
+          <button onClick={() => setLanguage("en")}>
             {t("english")}
           </button>
         </div>
@@ -31,8 +29,7 @@ export default function Settings() {
       </section>
 
       <div className="settings-actions">
-        <button
-          onClick={() => navigate(-1)}>
+        <button onClick={() => navigate(-1)}>
           ← {t("back")}
         </button>
       </div>

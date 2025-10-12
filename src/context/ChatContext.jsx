@@ -16,7 +16,7 @@ const ChatProvider = ({ children }) => {
       localStorage.removeItem("selectedUser")
     }
  } 
- // 3. Al montar el Provider, revisamos si hay usuarios guardados en localStorage
+ // 3. Al montar el Provider,  usuarios guardados en localStorage
  //    - Si existen, los usamos
   useEffect(() => {
     const storedUsers = localStorage.getItem("users")

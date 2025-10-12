@@ -1,17 +1,18 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { useChat } from "../context/ChatContext"
 import { useSettings } from "../context/SettingsContext"
 
 
 export default function Sidebar() {
-   const { t, language } = useSettings()
+   const { t } = useSettings()
 
   const { users, setSelectedUser } = useChat()
   const [usersToRender, setUsersToRender] = useState(users)
+
+  const inputRef = useRef(null)
   
-  // 🔄 Cada vez que cambien los usuarios globales, actualizamos la lista a renderizar
-  useEffect(() => {
-    setUsersToRender(users)
+  // 🔄 actualizamos la lista a renderizar
+  useEffect(() => { setUsersToRender(users)
   }, [users])
 
   // 🔍 Filtro por búsqueda
@@ -23,9 +24,16 @@ export default function Sidebar() {
     setUsersToRender(result)
   }
 
+   // seleccionar contacto y limpia input + restaurar lista
+  const handleSelect = (user) => {
+    setSelectedUser(Number(user.id));
+      if (inputRef.current) inputRef.current.value = "" 
+      setUsersToRender(users) 
+    }
+  
   return (
     <div className="sidebar">
-      <input
+      <input ref ={inputRef}
         type="text"
         placeholder={t("search")} 
         className="search"
@@ -39,25 +47,19 @@ export default function Sidebar() {
         {usersToRender.map((user) => (
           <li
             key={user.id}
-            onClick={() => setSelectedUser(Number(user.id))}
-            className="user"
-          >
+            onClick={() => handleSelect(user)}  
+            className="user">
             <img
               className="avatar"
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4YreOWfDX3kK-QLAbAL4ufCPc84ol2MA8Xg&s"
-              alt={user.name}
-            />
+              alt={user.name}/>
             <div className="user-info">
               <strong>
-                <span
-                  style={{
-                    color: user.status === "online" ? "green" : "red",
-                    marginRight: "3px",
-                  }}
-                >
-                  •
-                </span>
-                {user.name}
+                <span style={{
+                  color: user.status === "online" ?
+                  "green" : "red", marginRight: "3px"
+                  }}> •
+                </span>{user.name}
               </strong>
               <small>
                 {user.status === "offline" ?  user.lastSeen : "online"}
