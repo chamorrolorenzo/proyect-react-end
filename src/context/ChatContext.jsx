@@ -26,8 +26,17 @@ const ChatProvider = ({ children }) => {
     if (storedUsers) {
       const parsed = JSON.parse(storedUsers)
       setUsers(parsed)
+      
+      //volvemos a contacto cuando abrimos la App
+      const startOnContacts = localStorage.getItem("startOnContacts") === "1";
+    if (startOnContacts) {
+      setSelectedUser(null);                
+      localStorage.removeItem("startOnContacts"); 
+      return;                               
+    }
+      
           if (storedSelected != null && parsed.some(u => Number(u.id) === Number(storedSelected))) {
-        setSelectedUser(storedSelected) // NEW
+        setSelectedUser(storedSelected) 
       }
  
     } else {
@@ -84,7 +93,9 @@ const ChatProvider = ({ children }) => {
      if (users.length > 0) {
       localStorage.setItem("users", JSON.stringify(users))
     }
-  }, [users])
+    }, [users])
+  
+    
 
   return (
     <ChatContext.Provider value={{ users, setUsers, selectedUser, setSelectedUser }}>

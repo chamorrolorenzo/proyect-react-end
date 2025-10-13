@@ -49,10 +49,14 @@ export default function Chat() {
     setMsg("")
   }
 
-  const handleLogout = () => {
-    localStorage.removeItem("isLoggedIn");
-    navigate("/");
-  };
+ const handleLogout = () => {
+  localStorage.removeItem("isLoggedIn");
+  localStorage.removeItem("selectedUser");     // ← limpia selección previa
+  localStorage.setItem("startOnContacts", "1"); // ← señal para abrir en Contactos
+  setSelectedUser(null);                       // ← vuelve a Contactos en la sesión actual
+  navigate("/");
+};
+
 
   return (
     <div className="chat">
