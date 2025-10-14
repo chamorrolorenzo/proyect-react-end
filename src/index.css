@@ -112,6 +112,7 @@
   cursor: pointer;
   font-size: 16px;
 }
+.clip {  margin-right: -13px; }
 
 .chat-messages {
   background-color: violet;
@@ -246,6 +247,21 @@ form .text-info {
 }
 
 .back-btn{ display:none;} 
+
+/*Usamos grid para poner el estado debajo del nombre*/
+.chat-user{
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+   }
+  .chat-user .back-btn{ grid-column: 1; }
+  .chat-user .chat-avatar{ grid-column: 2;  margin-top: 8px;   }
+  .chat-user strong{ grid-column: 3; }        
+  .chat-user .last-seen{
+    grid-column: 3;                            
+    display: block;
+    margin-top: -10px;
+    font-size: 12px;
+  }
 
 /* movil, alterna entre lista y chat*/
 

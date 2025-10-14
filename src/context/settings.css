@@ -161,7 +161,7 @@
   font-weight: 600;
 }
 
-/* ===== Settings view (sin inline) ===== */
+/* ===== Settings ===== */
 .settings {
   max-width: 560px;
   margin: 0 auto;
@@ -187,7 +187,7 @@
 }
 
 /* Botones de idioma */
-.settings__lang { display: flex; gap: 12px; }
+.settings-lang { display: flex; gap: 12px; }
 
 /* Botón base (reutilizable) */
 .btn {
@@ -208,7 +208,7 @@
 }
 
 /* Acciones al pie (volver) */
-.settings__actions { margin-top: 20px; }
+.settings-actions { margin-top: 20px; }
 
 /* ===== Variantes dark (energy) para Settings ===== */
 .energy .settings > section {

@@ -51,9 +51,9 @@ export default function Chat() {
 
  const handleLogout = () => {
   localStorage.removeItem("isLoggedIn");
-  localStorage.removeItem("selectedUser");     // ← limpia selección previa
-  localStorage.setItem("startOnContacts", "1"); // ← señal para abrir en Contactos
-  setSelectedUser(null);                       // ← vuelve a Contactos en la sesión actual
+  localStorage.removeItem("selectedUser");     
+  localStorage.setItem("startOnContacts", "1"); 
+  setSelectedUser(null);                       
   navigate("/");
 };
 
@@ -72,18 +72,20 @@ export default function Chat() {
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4YreOWfDX3kK-QLAbAL4ufCPc84ol2MA8Xg&s"
               alt={user.name} className="chat-avatar"/>
-            <strong>{user.name}</strong>
-            {user.lastSeen !== "" && <span className="last-seen">Last seen: {user.lastSeen}</span>}
+             <strong>{user.name}</strong>
+             {(user.status === "online" || user.lastSeen) && (
+             <span className="last-seen">
+             {user.status === "online" ? t("online") : `${t("Last seen")}: ${user.lastSeen}`}
+            </span>
+           )}
           </div>
         </div>
 
         <div className="chat-actions">
            <Clip />
           <button title="Gallery">🖼️</button>
-                <button title={t("settings")} onClick={openSettings}>⚙️</button>
-
+          <button title={t("settings")} onClick={openSettings}>⚙️</button>
           <button title={t("help")} onClick={() => navigate("/help")}>❓</button>
-          
           <button title={t("logout")} onClick={handleLogout} className="logout-btn"> ✖ 
           </button>
         </div>
